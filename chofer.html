@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Chofer • Nenapp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-6 fade-in">
+    <div class="bg-slate-900/90 backdrop-blur border border-slate-700/60 p-8 rounded-3xl shadow-2xl w-full max-w-md">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl font-bold">Panel GPS</h2>
+            <a href="index.html" class="p-2 bg-slate-800 rounded-full text-slate-400 hover:text-white transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </a>
+        </div>
+        
+        <div class="space-y-6">
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Unidad / Placa:</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <span class="text-xl">🚛</span>
+                    </div>
+                    <input type="text" id="camionId" value="Camión 01" class="w-full pl-12 pr-4 py-4 bg-slate-800 border border-slate-700 text-white font-bold rounded-2xl outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-800/50 border border-slate-700/50 flex flex-col items-center justify-center gap-2">
+                <div id="statusIcon" class="w-4 h-4 rounded-full bg-slate-600 mb-2"></div>
+                <div id="status" class="text-sm font-semibold text-slate-400">Transmisión Inactiva</div>
+                <div id="coords" class="text-xs text-slate-500 font-mono">Lat: --- | Lng: ---</div>
+            </div>
+
+            <button id="btnToggle" onclick="toggleRuta()" class="w-full py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-lg rounded-2xl shadow-lg shadow-emerald-600/30 transition transform active:scale-95 flex items-center justify-center gap-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Iniciar Transmisión
+            </button>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/script-chofer.js"></script>
+</body>
+</html>
